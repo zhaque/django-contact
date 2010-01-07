@@ -42,10 +42,12 @@ class ContactForm(forms.Form):
 
     name = forms.CharField(max_length=100,
                            widget=forms.TextInput(attrs=attrs_dict),
-                           label=_('Your name'))
+                           label=_('Your name'),
+                           help_text = _('e.g.: Bob Young'))
     email = forms.EmailField(widget=forms.TextInput(attrs=dict(attrs_dict,
                                                                maxlength=200)),
-                             label=_('Your email address'))
+                             label=_('Your email address'),
+                             help_text = _('e.g.: bob.young@yourcompany.com'))
     body = forms.CharField(widget=forms.Textarea(attrs=attrs_dict),
                               label=_('Your message'))
 
